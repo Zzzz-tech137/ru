@@ -1,0 +1,76 @@
+import { Card, CardContent } from "@/components/ui/card";
+import { Button } from "@/components/ui/button";
+import { motion } from "framer-motion";
+import { Sparkles, Home, Building, Trash2 } from "lucide-react";
+
+export default function CleaningSite() {
+  return (
+    <div className="min-h-screen bg-gradient-to-b from-sky-100 to-sky-300 text-gray-800">
+      {/* Header */}
+      <header className="p-6 flex justify-between items-center bg-sky-600 text-white shadow-md">
+        <h1 className="text-2xl font-bold flex items-center gap-2">
+          <Sparkles className="w-6 h-6" /> Чистый Дом
+        </h1>
+        <Button variant="secondary" className="bg-white text-sky-600 font-semibold">
+          Заказать уборку
+        </Button>
+      </header>
+
+      {/* Hero Section */}
+      <section className="text-center py-16 px-4">
+        <motion.h2
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.6 }}
+          className="text-4xl font-bold text-sky-700 mb-4"
+        >
+          Чистота и порядок в каждом уголке
+        </motion.h2>
+        <p className="text-lg max-w-2xl mx-auto text-gray-700">
+          Профессиональная уборка домов, подъездов и лифтов с использованием экологичных средств.
+        </p>
+        <Button className="mt-6 bg-sky-600 hover:bg-sky-700 text-white px-6 py-3 rounded-2xl shadow-lg">
+          Оставить заявку
+        </Button>
+      </section>
+
+      {/* Services */}
+      <section className="grid md:grid-cols-3 gap-8 px-6 py-12 max-w-6xl mx-auto">
+        <Card className="rounded-2xl shadow-lg hover:shadow-xl transition">
+          <CardContent className="p-6 text-center">
+            <Home className="w-12 h-12 text-sky-600 mx-auto mb-4" />
+            <h3 className="text-xl font-semibold mb-2">Уборка домов</h3>
+            <p className="text-gray-600">
+              Чистота в жилых помещениях: мытьё полов, окон, мебели и сантехники.
+            </p>
+          </CardContent>
+        </Card>
+
+        <Card className="rounded-2xl shadow-lg hover:shadow-xl transition">
+          <CardContent className="p-6 text-center">
+            <Building className="w-12 h-12 text-sky-600 mx-auto mb-4" />
+            <h3 className="text-xl font-semibold mb-2">Уборка подъездов</h3>
+            <p className="text-gray-600">
+              Поддержание чистоты в местах общего пользования жилых домов.
+            </p>
+          </CardContent>
+        </Card>
+
+        <Card className="rounded-2xl shadow-lg hover:shadow-xl transition">
+          <CardContent className="p-6 text-center">
+            <Trash2 className="w-12 h-12 text-sky-600 mx-auto mb-4" />
+            <h3 className="text-xl font-semibold mb-2">Уборка лифтов</h3>
+            <p className="text-gray-600">
+              Специализированная уборка и дезинфекция лифтовых кабин.
+            </p>
+          </CardContent>
+        </Card>
+      </section>
+
+      {/* Footer */}
+      <footer className="bg-sky-700 text-white text-center py-6 mt-12">
+        <p>© 2025 Чистый Дом. Все права защищены.</p>
+      </footer>
+    </div>
+  );
+}
